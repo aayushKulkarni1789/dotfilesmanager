@@ -1,0 +1,2 @@
+# dotfilesmanager
+Uses stow
