@@ -1,6 +1,4 @@
-#!/usr/env/bin bash
-set -euo pipefail
-
+# Use this script to add dotfiles and stow them from your system to the dotfiles directory. You can select files or entire folders
 DOTFILES_DIR="dotfiles"
 
 echo "enter the max depth from home: "
@@ -13,6 +11,9 @@ dir_name="${base%.*}"
 mkdir -p "$PWD/$dir_name"
 OLDPWD="$PWD"
 cd "$HOME"
+echo "Stowing $dir_name"
 cp --parents -av "{}" "$OLDPWD/$dir_name/"
+rm -rf "{}"
 cd "$OLDPWD"
+stow -R -t "$HOME/" $dir_name
 '
