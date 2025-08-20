@@ -10,7 +10,7 @@ case $choice in
 esac
 
 cd ./$DOTFILES_DIR/
-directories_to_choose=$(fd --base-directory="$PWD" -t d -d 1| fzf -m --prompt="SELECT PACKAGES TO INSTALL >> ")
+directories_to_choose=$(fd --base-directory="$PWD" -H -t d -d 1| fzf -m --prompt="SELECT PACKAGES TO INSTALL >> ")
 
 for directory in $directories_to_choose; do
   cp -av "$PWD/$directory." "$HOME/"
