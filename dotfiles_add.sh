@@ -7,7 +7,7 @@ cd "$DOTFILES_DIR"
 
 fd . -0 -H -d $MAXDEPTH --base-directory="$HOME"| fzf --read0 --print0 -m --prompt="SELECT FILE/DIRECTORIES TO COPY >> " | xargs -0 -I{} sh -c '
 base="$(basename "{}")"
-dir_name="${base%.*}"
+dir_name="$(echo $base | tr ".", "_")"
 mkdir -p "$PWD/$dir_name"
 OLDPWD="$PWD"
 cd "$HOME"
