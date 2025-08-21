@@ -20,6 +20,8 @@ A minimal set of scripts made by someone who just wanted to "try" writing bash s
 - Asks for maxdepth from the user and shows `fzf` menu with that maxdepth in the `$HOME` directory.
 - Select the files or folders to be added to the dotfiles directory.
 - The selections will then be moved to dotfiles directory as stow packages and symlinks for them will be created.
+> [!NOTE]
+> If you are adding any dotfiles that are continuously being tracked by their respective packages (hyprland configs for example) then adding those dotfiles and stowing them could break the system temporarily. The issue will get solved with a reboot however I would still recommend backing up such dotfiles beforehand.
 
 ### `dotfiles_unstow.sh`
 - Opposite of the previous script.
